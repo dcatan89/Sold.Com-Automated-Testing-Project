@@ -1,31 +1,37 @@
 {
+  "name": "sold.com-automated-testing-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "private": true,
   "dependencies": {
-    "todomvc-app-css": "^2.0.1",
+    "classnames": "^2.1.5",
+    "director": "^1.2.0",
+    "react": "^0.13.3",
+    "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.1"
   },
   "devDependencies": {
-    "cypress": "^10.3.1",
-    "jasmine-core": "^2.0.0"
-  },
-  "name": "sold.com-automated-testing-project",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
+    "bin-up": "^1.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "bin-up cypress open --project ../.. --env framework=react",
+    "cy:run": "bin-up cypress run --project ../.. --env framework=react",
+    "cy:run:record": "npm run cy:run -- --record",
+    "start": "bin-up gulp test-server",
+    "test:gui": "bin-up run-p --race start cy:open",
+    "test": "bin-up run-p --race start cy:run",
+    "test:record": "bin-up run-p --race start cy:run:record"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dcatan89/Sold.Com-Automated-Testing-Project.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dcatan89/Sold.Com-Automated-Testing-Project/issues"
   },
-  "homepage": "https://github.com/dcatan89/Sold.Com-Automated-Testing-Project#readme",
-  "description": ""
+  "homepage": "https://github.com/dcatan89/Sold.Com-Automated-Testing-Project#readme"
 }
