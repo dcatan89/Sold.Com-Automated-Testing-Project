@@ -20,9 +20,9 @@
     "cy:run": "bin-up cypress run --project ../.. --env framework=react",
     "cy:run:record": "npm run cy:run -- --record",
     "start": "bin-up gulp test-server",
-    "test:gui": "bin-up run-p --race start cy:open",
-    "test": "bin-up run-p --race start cy:run",
-    "test:record": "bin-up run-p --race start cy:run:record"
+    "test:gui": "bin-up  start cy:open",
+    "test": "bin-up start cy:run",
+    "test:record": "bin-up start cy:run:record"
   },
   "repository": {
     "type": "git",
