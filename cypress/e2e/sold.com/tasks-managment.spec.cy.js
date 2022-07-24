@@ -23,4 +23,15 @@ describe('Task-Manangement Specs', () => {
     cy.get(' ul li:first-child .toggle').click()
     cy.get('[data-reactid=".0.2"] > button').should('have.class', 'clear-completed')
   })
+
+  it('Test 5: Clicking Clear completed button removes marked Todo', () => {
+    cy.get(' ul li:first-child .toggle').click()
+    cy.get('[data-reactid=".0.2"] > button').click()
+    cy.get('[data-reactid=".0.2.0.0"]').should('not.eq', 2)
+  })
+
+  it('Test 6: Editing Mode should hide toggle control', () => {
+    cy.get(' ul li:first-child  label' ).dblclick()
+    cy.get('ul li:first-child  .toggle').should('not.be.visible')
+  })
 })
