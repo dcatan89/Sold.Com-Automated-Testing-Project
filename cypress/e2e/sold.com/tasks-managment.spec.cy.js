@@ -1,5 +1,6 @@
 describe('Task-Manangement Specs', () => {
   beforeEach(() => {
+    cy.exec('npm run start')
     cy.visit('/')
     cy.get('[data-reactid=".0.0.1"]').type('Hello, world{enter}')
     cy.get('[data-reactid=".0.0.1"]').type('Hello Back{enter}')

@@ -1,5 +1,6 @@
 describe('Opening the TodoMVC app to check general specs', () => {
   beforeEach(() => {
+    cy.exec('npm run start')
     cy.visit('/')
   })
 
