@@ -5,14 +5,22 @@ describe('Task-Manangement Specs', () => {
     cy.get('[data-reactid=".0.0.1"]').type('Hello Back{enter}')
   })
 
-  it('Test 1: Clicks Mark all as completed ', () => {
+  it('Test 1: Clicks Mark all Todos as completed ', () => {
     cy.get('[data-reactid=".0.1.1"]').click()
     cy.get('li').should('have.class', 'completed')
   })
 
-  it('Test 2: Toggle Mark removes li completed class', () => {
+  it('Test 2: Toggle Mark Todos removes  completed class', () => {
     cy.get('[data-reactid=".0.1.1"]').click().click()
     cy.get('li').should('not.have.class', 'completed')
   })
 
+  it('Test 3: Todo Count displays 2 items left', () => {
+    cy.get('[data-reactid=".0.2.0.0"]').contains('2')
+  })
+
+  it('Test 4: Marking one Todo as complete displays Clear Completed button', () => {
+    cy.get(' ul li:first-child .toggle').click()
+    cy.get('[data-reactid=".0.2"] > button').should('have.class', 'clear-completed')
+  })
 })
