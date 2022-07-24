@@ -34,4 +34,12 @@ describe('Task-Manangement Specs', () => {
     cy.get(' ul li:first-child  label' ).dblclick()
     cy.get('ul li:first-child  .toggle').should('not.be.visible')
   })
-})
+
+  it('Test 7: Filter should be highlighted', () => {
+    cy.get('[data-reactid=".0.2.1"]')
+      .within(() => {
+        cy.get('[data-reactid=".0.2.1.2"]').click()
+        cy.get('[data-reactid=".0.2.1.2.0"]').should('have.class', 'selected')
+      })
+    })
+  })
